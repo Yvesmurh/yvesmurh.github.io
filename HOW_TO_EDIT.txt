@@ -1,0 +1,31 @@
+YVES MURHABAZI PORTFOLIO - HOW TO EDIT
+======================================
+
+Open index.html in a browser to preview. Open it in any code editor (VS Code, Notepad++) to change it.
+Refresh the browser after each save.
+
+FILES
+  index.html               all your text and the order of sections
+  assets/css/custom.css    YOUR styles: colors, fonts, cards (edit the :root block at the top to re-theme)
+  assets/css/main.css      the template's styles (avoid editing; custom.css overrides it)
+  images/me/               your pictures
+  assets/js/main.js        the template's scrolling behaviour (horizontal scroll, drag, arrow keys)
+
+COMMON CHANGES
+  Change text ........... edit the words between tags in index.html
+  Swap a picture ........ put the new file in images/me/ and change the src="..." in index.html
+  Add an education card . copy a whole <article class="card"> ... </article> block and paste it next to the others
+  Remove a section ....... delete from "<!-- SECTION: x -->" down to its closing </section>
+  Change colors .......... edit the --blue, --cyan, --navy values in custom.css (panel shades are further down)
+  Menu/navigation ........ the "Next" button on the first panel links to #about; give any section an id="..." and link with href="#..."
+
+PLACEHOLDERS TO FINISH (search index.html for "EDIT ME")
+  - Exetat Dashboard: description, Code and Live demo links
+  - IEEE student volunteer: the year
+  - Interesting facts: rewrite in your own voice
+  - Social links: check the Instagram, LinkedIn and X addresses are your real profiles
+
+NOTE
+  The site is a horizontal-scroll layout (scroll wheel, drag, or arrow keys move it sideways).
+  Fonts load from Google Fonts, so they need an internet connection; offline it falls back to Georgia/Arial.
+  Please keep the "Design: HTML5 UP" credit in the footer (required by the template license).
