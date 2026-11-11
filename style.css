@@ -16,15 +16,16 @@
    CSS VARIABLES
 ----------------------------------- */
 :root {
-  --bg-color: #070b14;
-  --bg-secondary: #101827;
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --accent: #d4b08c;
-  --accent-light: #e7c8aa;
-  --text: #ffffff;
-  --text-secondary: #b5b5b5;
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --glass: rgba(255, 255, 255, 0.08);
+  --bg-color: #0D1117;
+  --bg-secondary: #161B22;
+  --card-bg: #161B22;
+  --border-color: #30363D;
+  --accent: #E6EDF3;
+  --accent-light: #8B949E;
+  --text: #E6EDF3;
+  --text-secondary: #8B949E;
+  --shadow: none;
+  --glass: #161B22;
 }
 
 
@@ -44,7 +45,7 @@ html, body {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top left, #152238 0%, #0a101a 40%, #05070d 100%);
+  background: var(--bg-color);
   color: var(--text);
   overflow-x: hidden;
 }
@@ -70,7 +71,7 @@ section {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 70px;
-  color: var(--accent);
+  color: var(--text);
 }
 
 
@@ -80,7 +81,7 @@ section {
 .loader {
   position: fixed;
   inset: 0;
-  background: #05070d;
+  background: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,8 +91,8 @@ section {
 .spinner {
   width: 70px;
   height: 70px;
-  border: 5px solid rgba(255, 255, 255, 0.1);
-  border-top: 5px solid var(--accent);
+  border: 5px solid var(--border-color);
+  border-top: 5px solid var(--text-secondary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -106,7 +107,7 @@ section {
   left: 0;
   width: 0;
   height: 4px;
-  background: linear-gradient(to right, var(--accent), var(--accent-light));
+  background: var(--text-secondary);
   z-index: 999;
 }
 
@@ -128,8 +129,8 @@ header {
   align-items: center;
   padding: 20px 10%;
   backdrop-filter: blur(15px);
-  background: rgba(10, 10, 10, 0.25);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(13, 17, 23, 0.9);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
@@ -144,14 +145,14 @@ header {
 }
 
 .nav-links a {
-  color: white;
+  color: var(--text);
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--accent);
+  color: var(--text-secondary);
 }
 
 .nav-links a::after {
@@ -161,7 +162,7 @@ header {
   bottom: -5px;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--border-color);
   transition: width 0.4s ease;
 }
 
@@ -183,7 +184,7 @@ header {
 .hamburger span {
   width: 30px;
   height: 3px;
-  background: white;
+  background: var(--text);
   border-radius: 5px;
 }
 
@@ -218,7 +219,7 @@ header {
 .hero h2 {
   margin-top: 15px;
   font-size: 2rem;
-  color: var(--accent-light);
+  color: var(--text-secondary);
   min-height: 50px;
 }
 
@@ -243,29 +244,30 @@ header {
   padding: 14px 35px;
   border-radius: 50px;
   font-weight: 600;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn-primary {
-  background: linear-gradient(to right, var(--accent), var(--accent-light));
-  color: #000;
-  box-shadow: 0 0 20px rgba(212, 176, 140, 0.35);
+  background: var(--border-color);
+  color: var(--text);
+  border: 1px solid var(--border-color);
 }
 
 .btn-primary:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 35px rgba(212, 176, 140, 0.6);
+  transform: translateY(-2px);
+  background: #3D444D;
+  border-color: #3D444D;
 }
 
 .btn-secondary {
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid var(--border-color);
+  color: var(--text);
   background: transparent;
 }
 
 .btn-secondary:hover {
-  background: var(--accent);
-  color: black;
+  background: var(--bg-secondary);
+  border-color: #484F58;
 }
 
 
@@ -285,9 +287,8 @@ header {
   border-radius: 50%;
   overflow: hidden;
   padding: 8px;
-  background: linear-gradient(135deg, var(--accent), transparent, var(--accent));
-  box-shadow: 0 0 50px rgba(212, 176, 140, 0.4);
-  animation: glowPulse 3s infinite ease-in-out;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -307,7 +308,7 @@ header {
 }
 
 .location i {
-  color: var(--accent);
+  color: var(--text-secondary);
 }
 
 
@@ -318,10 +319,8 @@ header {
 .skill-card,
 .portfolio-card,
 .contact-form {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: var(--shadow);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
 }
 
 
@@ -332,13 +331,6 @@ header {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 20px rgba(212, 176, 140, 0.25); }
-  50% { box-shadow: 0 0 60px rgba(212, 176, 140, 0.65); }
-  100% { box-shadow: 0 0 20px rgba(212, 176, 140, 0.25); }
-}
-
 
 /* -----------------------------------
    SKILLS / PROGRESS
@@ -369,9 +361,9 @@ header {
 
     position: relative;
 
-    background: #171923;
+    background: var(--bg-secondary);
 
-    border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid var(--border-color);
 
     border-radius: 18px;
 
@@ -381,21 +373,15 @@ header {
 
     overflow: hidden;
 
-    transition: all .3s ease;
+    transition: transform .2s ease, border-color .2s ease;
 }
 
 
 .skill-card:hover {
 
-    transform: translateY(-10px);
+    transform: translateY(-3px);
 
-    border-color: rgba(255,255,255,.2);
-
-    box-shadow:
-
-    0 15px 40px rgba(0,0,0,.3),
-
-    0 0 30px rgba(255,255,255,.05);
+    border-color: #484F58;
 
 }
 
@@ -408,7 +394,7 @@ header {
 
     margin-bottom: 20px;
 
-    color: rgba(212, 176, 140, 0.65);
+    color: var(--text-secondary);
 
 }
 
@@ -434,7 +420,7 @@ header {
 
     height: 10px;
 
-    background: rgba(255,255,255,.08);
+    background: var(--bg-color);
 
     border-radius: 30px;
 
@@ -449,11 +435,7 @@ header {
 
     border-radius: 30px;
 
-    background: linear-gradient(
-        90deg,
-        rgba(212, 176, 140, 0.65),
-        #7e7a62
-    );
+    background: var(--text-secondary);
 
 }
 
@@ -494,19 +476,17 @@ header {
 
     justify-content: center;
     align-items: center;
-    background: rgba(255,255,255,.08);
-    border: 1px solid rgba(255,255,255,.15);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
     z-index: 10;
-    box-shadow:
-    0 0 20px rgba(255,255,255,.1);
 
 }
 
 
 .lock-overlay i {
 
-    color: white;
+    color: var(--text);
     font-size: 1rem;
 
 }
@@ -518,7 +498,7 @@ header {
 
     margin-top: 30px;
     font-size: .95rem;
-    color: #bbb;
+    color: var(--text-secondary);
     font-style: italic;
     letter-spacing: 1px;
 }
@@ -573,9 +553,9 @@ header {
 }
 
 .portfolio-filter button {
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
-  border: none;
+  background: var(--bg-secondary);
+  color: var(--text);
+  border: 1px solid var(--border-color);
   padding: 15px 25px;
   border-radius: 50px;
   cursor: pointer;
@@ -584,13 +564,11 @@ header {
 }
 
 .portfolio-filter button:hover {
-  background: var(--accent);
-  color: black;
+  background: var(--border-color);
 }
 
 .portfolio-filter button.active {
-  background: var(--accent);
-  color: black;
+  background: var(--border-color);
 }
 
 .portfolio-grid {
@@ -604,12 +582,12 @@ header {
   border-radius: 25px;
   overflow: hidden;
   position: relative;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .portfolio-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 35px rgba(212, 176, 140, 0.25);
+  transform: translateY(-3px);
+  border-color: #484F58;
 }
 
 .portfolio-card img {
@@ -641,48 +619,17 @@ header {
 }
 
 .overlay h3 {
-  color: white;
+  color: var(--text);
   font-size: 1.7rem;
 }
 
 .overlay p {
-  color: var(--accent);
+  color: var(--text);
 }
 
 .overlay .btn {
-  background: var(--accent);
-  color: black;
-}
-
-
-/* -----------------------------------
-   CARD GLOW EFFECT
------------------------------------ */
-.skill-card,
-.stat-card,
-.portfolio-card {
-  position: relative;
-}
-
-.skill-card::after,
-.stat-card::after,
-.portfolio-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, transparent, rgba(212, 176, 140, 0.3), transparent);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.skill-card:hover::after,
-.stat-card:hover::after,
-.portfolio-card:hover::after {
-  opacity: 1;
+  background: var(--border-color);
+  color: var(--text);
 }
 
 
@@ -712,13 +659,12 @@ header {
   padding: 35px;
   border-radius: 25px;
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-10px);
-  border: 1px solid var(--accent);
-  box-shadow: 0 0 30px rgba(212, 176, 140, 0.25);
+  transform: translateY(-3px);
+  border-color: #484F58;
 }
 
 .stat-card h3 {
@@ -760,15 +706,15 @@ header {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--accent);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
   font-size: 1.2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 .contact-info i:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(212, 176, 140, 0.4);
+  color: var(--text);
 }
 
 
@@ -785,16 +731,16 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--accent);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .socials a:hover {
-  transform: translateY(-8px);
-  background: var(--accent);
-  color: black;
-  box-shadow: 0 0 25px rgba(212, 176, 140, 0.45);
+  background: var(--border-color);
+  border-color: #484F58;
+  color: var(--text);
 }
 
 
@@ -808,13 +754,13 @@ header {
   width: 100%;
   padding: 18px 22px;
   margin-bottom: 25px;
-  border: none;
+  border: 1px solid var(--border-color);
   outline: none;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.06);
-  color: white;
+  background: var(--bg-color);
+  color: var(--text);
   font-size: 1rem;
-  transition: box-shadow 0.3s ease, border 0.3s ease;
+  transition: border-color 0.2s ease;
 }
 
 .contact-form textarea {
@@ -823,13 +769,12 @@ header {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border: 1px solid var(--accent);
-  box-shadow: 0 0 20px rgba(212, 176, 140, 0.2);
+  border-color: var(--text-secondary);
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #888;
+  color: var(--text-secondary);
 }
 
 
@@ -840,8 +785,8 @@ footer {
   margin-top: 100px;
   padding: 60px 10%;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
 }
 
 .footer-logo {
@@ -880,18 +825,19 @@ footer {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--accent);
-  transition: transform 0.4s ease, background 0.4s ease;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .footer-socials a:hover {
-  transform: translateY(-7px);
-  background: var(--accent);
-  color: black;
+  background: var(--border-color);
+  border-color: #484F58;
+  color: var(--text);
 }
 
-footer p { color: #888; }
+footer p { color: var(--text-secondary); }
 
 
 /* -----------------------------------
@@ -905,13 +851,14 @@ footer p { color: #888; }
   height: 55px;
   border: none;
   border-radius: 50%;
-  background: linear-gradient(to right, var(--accent), var(--accent-light));
-  color: black;
+  background: var(--border-color);
+  color: var(--text);
+  border: 1px solid #484F58;
   cursor: pointer;
   font-size: 1.1rem;
   opacity: 0;
   visibility: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.4s ease;
   z-index: 999;
 }
 
@@ -921,8 +868,8 @@ footer p { color: #888; }
 }
 
 #backToTop:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(212, 176, 140, 0.5);
+  transform: translateY(-2px);
+  background: #3D444D;
 }
 
 
@@ -961,32 +908,6 @@ footer p { color: #888; }
 
 
 /* -----------------------------------
-   GOLD SHIMMER
------------------------------------ */
-.gold-border {
-  position: relative;
-  overflow: hidden;
-}
-
-.gold-border::before {
-  content: "";
-  position: absolute;
-  top: -100%;
-  left: -100%;
-  width: 300%;
-  height: 300%;
-  background: linear-gradient(45deg, transparent, rgba(212, 176, 140, 0.2), transparent);
-  transform: rotate(25deg);
-  animation: shimmer 6s linear infinite;
-}
-
-@keyframes shimmer {
-  from { transform: translateX(-100%) rotate(25deg); }
-  to { transform: translateX(100%) rotate(25deg); }
-}
-
-
-/* -----------------------------------
    RESPONSIVE HELPERS
 ----------------------------------- */
 @media (max-width: 992px) {
@@ -1004,7 +925,7 @@ footer p { color: #888; }
 
 @media (max-width: 768px) {
   .navbar { padding: 20px 6%; }
-  .nav-links { position: absolute; top: 80px; right: -100%; width: 250px; flex-direction: column; background: rgba(8,10,16,0.95); backdrop-filter: blur(20px); padding: 30px; transition: right 0.4s ease; border-radius: 20px; }
+  .nav-links { position: absolute; top: 80px; right: -100%; width: 250px; flex-direction: column; background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 30px; transition: right 0.4s ease; border-radius: 20px; }
   .nav-links.active { right: 20px; }
   .hamburger { display: flex; }
   .hero h1 { font-size: 3rem; }
@@ -1030,7 +951,7 @@ footer p { color: #888; }
 }
 
 .philosophy {
-  color: var(--accent);
+  color: var(--text-secondary);
   font-style: italic;
   margin-bottom: 30px;
 }
@@ -1038,7 +959,7 @@ footer p { color: #888; }
 .philosophy-quote {
   margin-top: 25px;
   padding-left: 20px;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--border-color);
   color: var(--text-secondary);
   font-style: italic;
   line-height: 1.8;
@@ -1047,7 +968,7 @@ footer p { color: #888; }
 .philosophy-quote span {
   display: block;
   margin-top: 8px;
-  color: var(--accent);
+  color: var(--text-secondary);
   font-style: normal;
   font-size: 0.9rem;
 }
@@ -1057,25 +978,22 @@ footer p { color: #888; }
 }
 
 .nav-links a.active {
-  color: var(--accent);
+  color: var(--text-secondary);
 }
 
 /* Info cards (education, learning, journey) */
 .info-card,
 .project-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: var(--shadow);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 22px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .info-card:hover,
 .project-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent);
-  box-shadow: 0 0 30px rgba(212, 176, 140, 0.25);
+  transform: translateY(-3px);
+  border-color: #484F58;
 }
 
 .info-grid {
@@ -1116,8 +1034,9 @@ footer p { color: #888; }
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--accent);
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
   font-size: 1.3rem;
 }
 
@@ -1134,7 +1053,7 @@ footer p { color: #888; }
 
 .info-card .when {
   margin-top: 6px;
-  color: var(--accent);
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
@@ -1159,8 +1078,7 @@ footer p { color: #888; }
   object-fit: cover;
   object-position: top;
   border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
 }
 
 /* Project card */
@@ -1185,8 +1103,9 @@ footer p { color: #888; }
   justify-content: center;
   flex-shrink: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--accent);
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
   font-size: 1.6rem;
 }
 
@@ -1196,7 +1115,7 @@ footer p { color: #888; }
 }
 
 .project-tag {
-  color: var(--accent);
+  color: var(--text-secondary);
   font-size: 0.9rem;
   margin-top: 4px;
 }
@@ -1214,7 +1133,7 @@ footer p { color: #888; }
 }
 
 .project-points h4 {
-  color: var(--accent-light);
+  color: var(--text);
   margin-bottom: 8px;
 }
 
@@ -1240,7 +1159,7 @@ footer p { color: #888; }
 }
 
 .contact-info a:hover {
-  color: var(--accent);
+  color: var(--text);
 }
 
 @media (max-width: 992px) {
