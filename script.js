@@ -43,8 +43,7 @@ window.addEventListener('load', () => {
 const titles = [
     'Computer Science Student',
     'Aspiring Data Scientist',
-    'Software Engineering Enthusiast',
-    'IEEE TechX Ambassador'
+    'Software Engineering Enthusiast'
 ];
 
 let titleIndex = 0;
